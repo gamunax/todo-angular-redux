@@ -6,6 +6,6 @@ export class Todo {
   constructor(title: string) {
     this.title =  title;
     this.id = new Date().getTime();
-    this.completed = false;
+    this.completed = true;
   }
 }
