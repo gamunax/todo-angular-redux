@@ -6,6 +6,6 @@ export class Todo {
   constructor(title: string) {
     this.title =  title;
     this.id = Math.random();
-    this.completed = true;
+    this.completed = false;
   }
 }
