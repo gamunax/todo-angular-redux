@@ -1,6 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
 import { Todo } from './models/todo.model';
-import { Create, Delete, Edit, Toggle, ToggleAll } from './todo.actions';
+import { Create, Delete, Edit, Toggle, ToggleAll, ClearCompleted } from './todo.actions';
 
 export const initialState: Todo[] = [
   new Todo('Vencer a Thanos'),
@@ -45,7 +45,9 @@ const _create = createReducer(initialState,
         completed
       };
     });
-  })
+  }),
+
+  on(ClearCompleted, (state) => state?.filter(todo => !todo.completed))
 );
 
 // tslint:disable-next-line: typedef
